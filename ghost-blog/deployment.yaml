@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ghost-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ghost
+  template:
+    metadata:
+      labels:
+        app: ghost
+    spec:
+      containers:
+      - name: ghost
+        image: ygtoken/ghost-blog # DockerHub에 업로드한 이미지 이름
+        env:
+        - name: NODE_ENV
+          value: development
+        - name: url
+          value: http://localhost:3001 # 원하는 URL 설정
+        ports:
+        - containerPort: 2368
+
