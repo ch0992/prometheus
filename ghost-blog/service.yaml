@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: some-ghost-service
+  name: ghost-service
 spec:
   selector:
     app: ghost
