@@ -22,3 +22,11 @@ spec:
           value: http://localhost:3001
         ports:
         - containerPort: 2368
+        volumeMounts:
+        - name: ghost-data
+          mountPath: /mnt/ghost
+      volumes:
+      - name: ghost-data
+        hostPath:
+          path: /mnt/ghost
+          type: DirectoryOrCreate
