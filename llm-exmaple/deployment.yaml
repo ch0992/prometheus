@@ -2,8 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: llamafile-server
+  namespace: llm
 spec:
-  replicas: 1 # 배포할 파드 수
+  replicas: 1
   selector:
     matchLabels:
       app: llamafile-server
@@ -17,10 +18,3 @@ spec:
         image: ygtoken/llm-service # Docker Hub에 업로드한 이미지 이름
         ports:
         - containerPort: 8080 # 컨테이너 내부의 포트
-        volumeMounts:
-        - name: data-volume # 볼륨 이름
-          mountPath: /data # 컨테이너 내부 마운트 경로
-      volumes:
-      - name: data-volume # 볼륨 이름
-        hostPath:
-          path: /path/to/your/host/data # 호스트의 데이터 디렉토리 경로
