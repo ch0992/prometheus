@@ -34,7 +34,10 @@ helm install prometheus prometheus-community/kube-prometheus-stack -n monitoring
 helm list -n monitoring
 ```
 
-
+- helm value patch
+```
+helm install prometheus prometheus-community/kube-prometheus-stack -f nodeport.yaml -n monitoring
+```
 
 
 ## reference
