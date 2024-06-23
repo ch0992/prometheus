@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ghost-deployment
+  name: some-ghost-deployment
 spec:
   replicas: 2
   selector:
@@ -14,19 +14,11 @@ spec:
     spec:
       containers:
       - name: ghost
-        image: ygtoken/ghost-blog # DockerHub에 업로드한 이미지 이름
+        image: ygtoken/ghost-blog:latest
         env:
         - name: NODE_ENV
           value: development
         - name: url
-          value: http://localhost:3001 # 원하는 URL 설정
+          value: http://localhost:3001
         ports:
         - containerPort: 2368
-        volumeMounts:
-        - name: ghost-data # 볼륨 이름
-          mountPath: /mnt/ghost # 컨테이너 내 마운트 경로
-      volumes:
-      - name: ghost-data
-        hostPath:
-          path: /mnt/ghost # 호스트 머신의 실제 경로
-          type: DirectoryOrCreate # 호스트 경로가 없으면 생성하도록 설정
