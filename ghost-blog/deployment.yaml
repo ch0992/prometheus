@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ghost
-        image: ygtoken/ghost-blog:latest
+        image: ghost:latest
         env:
         - name: NODE_ENV
           value: development
