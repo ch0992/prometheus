@@ -381,7 +381,7 @@ config:
   inputs: |
     [INPUT]
         Name tail
-        Path /var/log/containers/*.log
+        Path: /var/log/containers/*ghost-deployment*.log
         multiline.parser docker, cri
         Tag kube.*
         Mem_Buf_Limit 5MB
