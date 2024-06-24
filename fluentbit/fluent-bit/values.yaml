@@ -400,9 +400,9 @@ config:
   ## https://docs.fluentbit.io/manual/pipeline/outputs
   outputs: |
     [OUTPUT]
-        Name file
+        Name stdout
         Match kube.*
-        Path /var/log/test.txt
+
 
 
   ## https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/classic-mode/upstream-servers
