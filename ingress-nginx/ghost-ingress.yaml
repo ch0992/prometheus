@@ -13,4 +13,4 @@ spec:
           service:
             name: ghost-service # 위에서 생성한 서비스 이름
             port:
-              number: 80 # 서비스의 포트 번호
+              number: 30268 # 서비스의 포트 번호
