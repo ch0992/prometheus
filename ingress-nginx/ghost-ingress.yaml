@@ -4,7 +4,7 @@ metadata:
   name: ghost-ingress
 spec:
   rules:
-  - host: homelab.ghost.blog
+  - host: 192.168.219.42
     http:
       paths:
       - path: / # 접속할 경로 설정
