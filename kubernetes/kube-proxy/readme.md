@@ -42,3 +42,7 @@ kubectl get cm -n kube-system
 k edit cm kube-proxy -n kube-system
 mode 수정
 kubectl -n kube-system rollout restart daemonset kube-proxy
+
+
+https://github.com/kubernetes/kubernetes/issues/115526
+https://www.slideshare.net/slideshow/233-large-containerclusternetworkloadbalancing/119166390#34
